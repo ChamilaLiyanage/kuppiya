@@ -1,5 +1,5 @@
 # Kuppiya
-Channel Link : https://www.youtube.com/channel/UCj8OiJm_C1p4YshDFv8GxPg
+Channel Link : https://www.youtube.com/c/KuppiyaSL
 
 ## Session 1
 Introduction to Kubernetes | සිංහලෙන්
