@@ -1,0 +1,13 @@
+{
+    "name": "echo_env_vars",
+    "version": "1.0.0",
+    "description": "Node.js on Docker",
+    "author": "Chamila Liyanage <chamilad.liyanage@gmail.com>",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.16.1"
+    }
+  }

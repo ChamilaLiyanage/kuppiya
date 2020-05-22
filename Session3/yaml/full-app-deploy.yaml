@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: review-deployment-2
+  labels:
+    app: review
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: review
+  template:
+    metadata:
+      labels:
+        app: review
+    spec:
+      containers:
+        - name: review-app
+          image: chamilaliyanage/echo-env-http:1.1
+          ports:
+            - containerPort: 8080          
+          env:
+            - name: MY_POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: MY_APP_NAME
+              value: review-application
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: review-service-lb
+spec:
+  type: LoadBalancer
+  selector:
+    app: review
+  ports:
+    - port: 80
+      targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-deployment
+  labels:
+    app: product
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: product
+  template:
+    metadata:
+      labels:
+        app: product
+    spec:
+      containers:
+        - name: product-app
+          image: chamilaliyanage/echo-env-http:1.1
+          env:
+            - name: MY_POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: MY_APP_NAME
+              value: product-application
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: product-service-lb
+spec:
+  type: LoadBalancer
+  selector:
+    app: product
+  ports:
+    - port: 80
+      targetPort: 8080
