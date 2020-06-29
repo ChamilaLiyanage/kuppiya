@@ -1,0 +1,13 @@
+{
+    "name": "hello_docker_world",
+    "version": "1.0.0",
+    "description": "Node.js on Docker Kuppiya Demo",
+    "author": "Chamila Liyanage",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.16.1"
+    }
+  }
