@@ -16,3 +16,7 @@ https://youtu.be/uAMBsSTlB5w
 ## Session 4
 Kubernetes - Introduction to Storage & Configuration Management | සිංහලෙන්
 https://youtu.be/C9htKsokLS0
+
+## Session 5
+Kubernetes - Autoscaling, Monitoring & Logging | සිංහලෙන්
+https://youtu.be/thpL9taKSDk
